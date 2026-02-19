@@ -16,7 +16,7 @@ async function displayDepartement(){
     for (const departement of data){
         const option = document.createElement('option');
         option.value = departement.code;
-        option.textContent = departement.nom;
+        option.textContent = `${departement.code} - ${departement.nom}`;
         select.appendChild(option);
     }
 
@@ -59,7 +59,7 @@ document.getElementById('communes').addEventListener('change',async function(){
                 infoDiv.innerHTML =`
                     <h3>${commune.nom}</h3>
                 <p><strong>Département :</strong> ${commune.departement.nom}</p>
-                <p><strong>Code postal :</strong> ${commune.codesPostaux}</p>
+                <p><strong>Code postal :</strong> ${commune.codesPostaux.join('-')}</p>
                 <p><strong>Population :</strong> ${commune.population || 'Non disponible'}</p>
                 ${commune.centre ? `<p><strong>Coordonnées :</strong> ${commune.centre.coordinates[1].toFixed(4)}, ${commune.centre.coordinates[0].toFixed(4)}</p>` : ''}
                 `;
