@@ -1,0 +1,95 @@
+:root {
+    --violet-fonce: #2F004F;
+    --violet: #5F0A87;
+    --rose-fonce: #A4508B;
+    --rose-pale: #C191A1;
+    --rose-clair: #EABFCB;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background: linear-gradient(135deg,
+    var(--violet-fonce) 0%,
+    var(--violet) 40%,
+    var(--rose-fonce) 70%,
+    var(--rose-clair) 100%);
+    background-attachment: fixed;
+    font-family: "Segoe UI", Roboto, sans-serif;
+    color: #fff;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+    color: var(--rose-clair);
+    margin-top: 2rem;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    text-shadow: 0 3px 6px rgba(47, 0, 79, 0.5);
+}
+label {
+    display: block;
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+    color: var(--rose-clair);
+}
+select {
+    width: clamp(200px, 50vw, 300px);
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 2px solid var(--rose-pale);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--rose-clair);
+    font-size: 1rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+select:hover, select:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: var(--rose-clair);
+    outline: none;
+}
+#infos {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-left: 5px solid var(--rose-fonce);
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 20px rgba(47, 0, 79, 0.3);
+    width: clamp(250px, 70vw, 600px);
+    color: var(--rose-clair);
+    text-align: center;
+}
+button {
+    background: linear-gradient(135deg, var(--rose-fonce), var(--rose-clair));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+button:hover {
+    background: linear-gradient(135deg, var(--violet), var(--rose-fonce));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(95, 10, 135, 0.4);
+}
+@media (max-width: 480px) {
+    body {
+        padding: 1rem;
+    }
+    h1 {
+        font-size: 1.7rem;
+    }
+    select {
+        width: 80vw;
+    }
+}
